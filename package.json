@@ -1,0 +1,7 @@
+{
+  "name": "test-form",
+  "private": true,
+  "dependencies": {
+    "jquery": "^3.5.1"
+  }
+}

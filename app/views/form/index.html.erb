@@ -1,0 +1,34 @@
+<div class="container-fluid">
+  <div class="row justify-content-center">
+    <div class="col-8 mt-3">
+      <form action="/send" method="post">
+        <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+        <div class="form-group">
+          <label for="documentField">CPF</label>
+          <input type="text" class="form-control document-number" id="documentField" name="user[document]">
+          <button class="btn btn-sm btn-primary mt-2 document-check">Verificar</button>
+        </div>
+        <div class="invisible-loading-message" style="display: none;">
+          <p>Aguarde...</p>
+        </div>
+        <div class="invisible-form">
+          <div class="form-group">
+            <label for="emailField">Email</label>
+            <input type="email" class="form-control" id="emailField" name="user[email]">
+          </div>
+          <div class="form-group">
+            <label for="passwordField">Senha</label>
+            <input type="password" class="form-control" id="passwordField" name="user[password]">
+          </div>
+          <div>
+            <button type="submit" class="btn btn-primary storage-form-data">Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<%= javascript_include_tag 'document_validate' %>
+<%= javascript_include_tag 'loading_document_validate' %>
+<%= javascript_include_tag 'session_storage' %>
